@@ -1,0 +1,400 @@
+[gd_scene load_steps=22 format=3 uid="uid://cs088w3px7qd8"]
+
+[ext_resource type="Script" uid="uid://b7ggnm52w8o48" path="res://script/home.gd" id="1_70rc6"]
+[ext_resource type="Texture2D" uid="uid://c8w2aia2bey5l" path="res://image/background/1.png" id="1_gytcb"]
+[ext_resource type="FontFile" uid="uid://btb68v0aeqcn0" path="res://fonts/bristone/Bristone.otf" id="2_gytcb"]
+[ext_resource type="FontFile" uid="uid://c6qhx6miphtbc" path="res://fonts/abnes/abnes.otf" id="2_s0yis"]
+[ext_resource type="FontFile" uid="uid://c0cet22rt33y2" path="res://fonts/hemi_head/HemiHead-Bold.otf" id="3_bblpj"]
+[ext_resource type="Texture2D" uid="uid://6o8vgfntpyy0" path="res://image/background/2.png" id="4_53lor"]
+[ext_resource type="Texture2D" uid="uid://bpbj3jg8a6axu" path="res://image/button/button.png" id="6_yyars"]
+[ext_resource type="Texture2D" uid="uid://c2p1hewouw5xx" path="res://image/button/button-clicked.png" id="7_mfjh7"]
+[ext_resource type="Texture2D" uid="uid://du0rx3avc53pt" path="res://image/button/button-hover.png" id="8_70rc6"]
+
+[sub_resource type="Animation" id="Animation_bblpj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("disclaimer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gytcb"]
+resource_name = "fade"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("disclaimer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 1.5666667, 6.266667, 6.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.9933718, 0.9933718, 0.9933718, 1), Color(0.9933718, 0.9933718, 0.9933718, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53lor"]
+_data = {
+&"RESET": SubResource("Animation_bblpj"),
+&"fade": SubResource("Animation_gytcb")
+}
+
+[sub_resource type="Animation" id="Animation_70rc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mfjh7"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.7666667, 2.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2670a"]
+resource_name = "fade out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2670a"]
+_data = {
+&"RESET": SubResource("Animation_70rc6"),
+&"fade in": SubResource("Animation_mfjh7"),
+&"fade out": SubResource("Animation_2670a")
+}
+
+[sub_resource type="Animation" id="Animation_tkano"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("yes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 280)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("no:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("no:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(557, 280)]
+}
+
+[sub_resource type="Animation" id="Animation_f4gl1"]
+resource_name = "fade in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r36is"]
+resource_name = "fade out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wkp4x"]
+resource_name = "text"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("yes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 280), Vector2(216, 272)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("no:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("no:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(557, 280), Vector2(557, 272)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r36is"]
+_data = {
+&"RESET": SubResource("Animation_tkano"),
+&"fade in": SubResource("Animation_f4gl1"),
+&"fade out": SubResource("Animation_r36is"),
+&"text": SubResource("Animation_wkp4x")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_70rc6")
+
+[node name="disclaimer" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="disclaimer"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_gytcb")
+
+[node name="Label" type="Label" parent="disclaimer"]
+offset_left = 352.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(0.9843137, 0.46666667, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("2_gytcb")
+theme_override_font_sizes/font_size = 60
+text = "Disclaimer"
+
+[node name="Label2" type="Label" parent="disclaimer"]
+offset_left = 24.0
+offset_top = 320.0
+offset_right = 1137.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("3_bblpj")
+text = "This game is a fan-made project created for non-commercial and portfolio purposes only.
+All songs, characters, and related content used in this game 
+belong to their respective original creators and copyright holders. 
+No ownership is claimed. No copyright infringement is intended."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="disclaimer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_53lor")
+}
+
+[node name="home-screen" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="home-screen"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_53lor")
+
+[node name="Label" type="Label" parent="home-screen"]
+offset_left = 208.0
+offset_top = 248.0
+offset_right = 955.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("2_s0yis")
+theme_override_font_sizes/font_size = 70
+text = "Voca-word"
+
+[node name="TextureButton" type="TextureButton" parent="home-screen"]
+offset_left = 387.0
+offset_top = 272.0
+offset_right = 2307.0
+offset_bottom = 1352.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_yyars")
+texture_pressed = ExtResource("7_mfjh7")
+texture_hover = ExtResource("8_70rc6")
+
+[node name="Label" type="Label" parent="home-screen/TextureButton"]
+modulate = Color(1, 1, 1, 0.7529412)
+layout_mode = 0
+offset_left = 764.99976
+offset_top = 480.0
+offset_right = 1219.9998
+offset_bottom = 617.0
+theme_override_fonts/font = ExtResource("2_gytcb")
+theme_override_font_sizes/font_size = 100
+text = "START"
+
+[node name="Label2" type="Label" parent="home-screen"]
+modulate = Color(1, 1, 1, 0.60784316)
+offset_left = 480.0
+offset_top = 424.0
+offset_right = 670.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("3_bblpj")
+text = "Click the button to start!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="home-screen"]
+libraries = {
+&"": SubResource("AnimationLibrary_2670a")
+}
+
+[node name="option" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="option"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_gytcb")
+
+[node name="Label" type="Label" parent="option"]
+offset_left = 304.0
+offset_top = 200.0
+offset_right = 861.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("2_gytcb")
+theme_override_font_sizes/font_size = 30
+text = "Welcome to Voca-word"
+
+[node name="Label2" type="Label" parent="option"]
+offset_left = 480.0
+offset_top = 288.0
+offset_right = 1037.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("3_bblpj")
+theme_override_font_sizes/font_size = 30
+text = "Need tutorial?"
+
+[node name="yes" type="TextureButton" parent="option"]
+offset_left = 216.0
+offset_top = 280.0
+offset_right = 2136.0
+offset_bottom = 1360.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_yyars")
+texture_pressed = ExtResource("7_mfjh7")
+texture_hover = ExtResource("8_70rc6")
+
+[node name="Label" type="Label" parent="option/yes"]
+modulate = Color(1, 1, 1, 0.7529412)
+layout_mode = 0
+offset_left = 839.9999
+offset_top = 479.99985
+offset_right = 1294.9999
+offset_bottom = 616.9999
+theme_override_fonts/font = ExtResource("2_gytcb")
+theme_override_font_sizes/font_size = 100
+text = "Yes"
+
+[node name="no" type="TextureButton" parent="option"]
+offset_left = 557.0
+offset_top = 280.0
+offset_right = 2477.0
+offset_bottom = 1360.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_yyars")
+texture_pressed = ExtResource("7_mfjh7")
+texture_hover = ExtResource("8_70rc6")
+
+[node name="Label" type="Label" parent="option/no"]
+modulate = Color(1, 1, 1, 0.7529412)
+layout_mode = 0
+offset_left = 855.00037
+offset_top = 480.00015
+offset_right = 1310.0004
+offset_bottom = 617.0001
+theme_override_fonts/font = ExtResource("2_gytcb")
+theme_override_font_sizes/font_size = 100
+text = "NO"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="option"]
+libraries = {
+&"": SubResource("AnimationLibrary_r36is")
+}
+
+[connection signal="pressed" from="home-screen/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="option/yes" to="." method="_on_yes_pressed"]

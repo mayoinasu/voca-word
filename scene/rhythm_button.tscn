@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctwnkmluggs1t"]
+
+[ext_resource type="Script" uid="uid://d1w3kn5fnl24g" path="res://script/rhythm_button.gd" id="1_6g3hg"]
+[ext_resource type="FontFile" uid="uid://c0cet22rt33y2" path="res://fonts/hemi_head/HemiHead-Bold.otf" id="2_x43ul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5kco"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05ho0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f04ti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_misi5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8bjgv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6g3hg")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_x43ul")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w5kco")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_05ho0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f04ti")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_misi5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8bjgv")
+action_mode = 0
+text = "Miku"

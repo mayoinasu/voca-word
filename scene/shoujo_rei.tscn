@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://btodm5hkkd58e"]
+
+[ext_resource type="Script" uid="uid://cr1vuxp1gsbs7" path="res://script/shoujo_rei.gd" id="1_adq2u"]
+[ext_resource type="Texture2D" uid="uid://b0my6wgs8gnwv" path="res://image/background/level.png" id="1_ep1gl"]
+[ext_resource type="FontFile" uid="uid://btb68v0aeqcn0" path="res://fonts/bristone/Bristone.otf" id="2_adq2u"]
+[ext_resource type="FontFile" uid="uid://c8d838phnq48p" path="res://fonts/hemi_head/HemiHead-BoldItalic.otf" id="4_pxq76"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_adq2u")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ep1gl")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 416.0
+offset_top = 72.0
+offset_right = 735.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("2_adq2u")
+theme_override_font_sizes/font_size = 40
+text = "Shoujo Rei"
+
+[node name="ComboLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 128.0
+offset_right = 907.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("4_pxq76")
+theme_override_font_sizes/font_size = 22
+text = "Combo"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 88.0
+offset_right = 912.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("4_pxq76")
+theme_override_font_sizes/font_size = 28
+text = "Score"

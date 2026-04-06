@@ -1,0 +1,585 @@
+[gd_scene load_steps=22 format=3 uid="uid://lhk510df4o6k"]
+
+[ext_resource type="Script" uid="uid://267sfbvrrimo" path="res://script/Tutorial.gd" id="1_dtcwg"]
+[ext_resource type="Texture2D" uid="uid://b0my6wgs8gnwv" path="res://image/background/level.png" id="2_10b80"]
+[ext_resource type="FontFile" uid="uid://btb68v0aeqcn0" path="res://fonts/bristone/Bristone.otf" id="3_nfshf"]
+[ext_resource type="FontFile" uid="uid://c0cet22rt33y2" path="res://fonts/hemi_head/HemiHead-Bold.otf" id="4_nfshf"]
+[ext_resource type="FontFile" uid="uid://c8d838phnq48p" path="res://fonts/hemi_head/HemiHead-BoldItalic.otf" id="5_cjvus"]
+
+[sub_resource type="Animation" id="Animation_mqdaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.78431374)]
+}
+
+[sub_resource type="Animation" id="Animation_otirw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5083107),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_won01"]
+resource_name = "tut1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(110, 248), Vector2(110, 288)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mo30s"]
+_data = {
+&"RESET": SubResource("Animation_mqdaa"),
+&"fade out": SubResource("Animation_otirw"),
+&"tut1": SubResource("Animation_won01")
+}
+
+[sub_resource type="Animation" id="Animation_cjvus"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Label3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448, 200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/Label3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.78431374)]
+}
+
+[sub_resource type="Animation" id="Animation_m7aaj"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Label3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nfshf"]
+resource_name = "tut2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Label3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(470, 220), Vector2(470, 260)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rif3s"]
+_data = {
+&"RESET": SubResource("Animation_cjvus"),
+&"fade out": SubResource("Animation_m7aaj"),
+&"tut2": SubResource("Animation_nfshf")
+}
+
+[sub_resource type="Animation" id="Animation_jhc0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Label4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Label5:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Label6:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Label6:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 288)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Label7:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/Label7:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 288)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rif3s"]
+resource_name = "fade in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35115036),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sj73p"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_10qud"]
+resource_name = "full_combo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label6:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label6:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 288), Vector2(400, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_ww7xe"]
+resource_name = "song_clear"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label7:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 288), Vector2(400, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_2v2eu"]
+resource_name = "tutorial1"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 6.5, 9, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10, 11, 15, 15.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0a1uy"]
+resource_name = "tutorial2"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.0333333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.9903116, 4.0181203, 8.001659, 9.013981),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(9.5049925, 9.978217, 11.499031, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2v2eu"]
+_data = {
+&"RESET": SubResource("Animation_jhc0h"),
+&"fade in": SubResource("Animation_rif3s"),
+&"fade out": SubResource("Animation_sj73p"),
+&"full_combo": SubResource("Animation_10qud"),
+&"song_clear": SubResource("Animation_ww7xe"),
+&"tutorial1": SubResource("Animation_2v2eu"),
+&"tutorial2": SubResource("Animation_0a1uy")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dtcwg")
+
+[node name="background" type="Node2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_10b80")
+
+[node name="Label" type="Label" parent="background"]
+offset_left = 440.0
+offset_top = 64.0
+offset_right = 720.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("3_nfshf")
+theme_override_font_sizes/font_size = 40
+text = "TUTORIAL"
+
+[node name="commentary" type="Node2D" parent="background"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background/commentary"]
+libraries = {
+&"": SubResource("AnimationLibrary_mo30s")
+}
+
+[node name="Label2" type="Label" parent="background/commentary/AnimationPlayer"]
+modulate = Color(1, 1, 1, 0.78431374)
+offset_left = 152.0
+offset_top = 256.0
+offset_right = 504.0
+offset_bottom = 310.00006
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 20
+text = "                              |
+(Hit the words when they show up)"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="background/commentary"]
+libraries = {
+&"": SubResource("AnimationLibrary_rif3s")
+}
+
+[node name="Label3" type="Label" parent="background/commentary/AnimationPlayer2"]
+modulate = Color(1, 1, 1, 0.78431374)
+offset_left = 448.0
+offset_top = 200.0
+offset_right = 646.0
+offset_bottom = 251.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 20
+text = "                 |
+(Hit the next words)"
+
+[node name="button" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2v2eu")
+}
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 176.0
+offset_right = 752.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 30
+text = "Welcome to Voca-word"
+
+[node name="Label2" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 200.0
+offset_top = 248.0
+offset_right = 961.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 30
+text = "Hit the words as they appear on the screen in time"
+
+[node name="Label3" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 464.0
+offset_top = 248.0
+offset_right = 653.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 50
+text = "Ready?"
+
+[node name="Label4" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 448.0
+offset_top = 296.0
+offset_right = 674.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 40
+text = "Easy right?"
+
+[node name="Label5" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 248.0
+offset_top = 280.0
+offset_right = 871.0
+offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("4_nfshf")
+theme_override_font_sizes/font_size = 30
+text = "                            Be careful!
+words will fade away if you don’t hit them"
+
+[node name="Label6" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 288.0
+offset_right = 738.0
+offset_bottom = 357.0009
+theme_override_fonts/font = ExtResource("5_cjvus")
+theme_override_font_sizes/font_size = 60
+text = "Full Combo!"
+
+[node name="Label7" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 288.0
+offset_right = 738.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("5_cjvus")
+theme_override_font_sizes/font_size = 60
+text = "Song Clear!"
