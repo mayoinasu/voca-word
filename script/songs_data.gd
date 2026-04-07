@@ -1,6 +1,6 @@
 extends Node
 
-var song_selected = 1
+var song_selected = 2
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],
@@ -199,15 +199,88 @@ var just_be_friends_map = [
 	[125.5, 300, 350, "friends"]
 ]
 
+var tswpi_map = [
+	[19.5, 200, 400, "Kagami yo"],
+	[20.1, 400, 320, "Kagami yo"],
+	[20.7, 700, 200, "Kagami-san"],
+	[21.7, 300, 400, "sekai de"],
+	[22.6, 600, 200, "ichiban"],
+	[23.1, 280, 350, "kawaigaru"],
+	[24.1, 800, 400, "no wa"],
+	[24.9, 500, 200, "yamete yo"],
+	[26.1, 200, 300, "toge no"],
+	[26.9, 400, 400, "you na"],
+	[27.2, 600, 300, "shisen"],
+	[27.8, 300, 200, "semaru"],
+	[29.0, 700, 500, "yasashii"],
+	[29.7, 240, 340, "furi shita"],
+	[30.4, 550, 240, "kanojo ga"],
+	[31.4, 800, 400, "suteki na"],
+	[32.1, 300, 500, "bansan"],
+	[32.8, 600, 300, "motenasatta"],
+	[33.7, 200, 400, "sotto"],
+	[34.5, 700, 390, "kuchi ni"],
+	[35.5, 350, 280, "fukumu to"],
+	[37.5, 300, 360, "[emi]"],
+	[39.8, 500, 200, "usureyuku"],
+	[44.5, 280, 400, "ishi no"],
+	[45.2, 600, 320, "naka de"],
+	[49.0, 200, 500, "yume wo"],
+	[50.1, 700, 300, "miteru"],
+	[51.6, 400, 200, "itsuka no"],
+	[53.7, 240, 400, "otogibanashi"],
+	[55.1, 580, 490, "toki ga"],
+	[56.6, 800, 320, "tomaru"],
+	[59.0, 180, 300, "onegai"],
+	[60.2, 600, 480, "KISS de"],
+	[61.2, 500, 200, "me wo"],
+	[61.8, 700, 200, "samashite"],
+	[63.0, 300, 500, "hoshii no"],
+	[64.4, 400, 340, "shiroi"],
+	[65.6, 600, 500, "hitsugi"],
+	[66.5, 200, 300, "kara"],
+	[67.3, 640, 200, "tsuredasu"],
+	[68.2, 180, 370, "you ni"],
+	[69.2, 400, 500, "tsukisasaru"],
+	[70.9, 740, 280, "nikushimi wa"],
+	[72.3, 420, 420, "doramateki"],
+	[74.1, 600, 500, "na jijou"],
+	[75.1, 800, 200, "inotte mo"],
+	[77.0, 380, 450, "kimi wa"],
+	[78.3, 780, 260, "mada konai"],
+	[87.8, 180, 300, "onegai"],
+	[88.9, 600, 480, "KISS de"],
+	[90.0, 500, 200, "me wo"],
+	[90.6, 700, 200, "samashite"],
+	[91.7, 300, 500, "hoshii no"],
+	[93.1, 400, 340, "shiroi"],
+	[94.5, 600, 500, "hitsugi"],
+	[95.3, 200, 300, "kara"],
+	[96.1, 640, 200, "tsuredasu"],
+	[96.8, 180, 370, "you ni"],
+	[97.9, 400, 500, "tsukisasaru"],
+	[99.7, 740, 280, "nikushimi wa"],
+	[101.0, 420, 420, "doramateki"],
+	[102.6, 600, 500, "na jijou"],
+	[104.0, 800, 200, "inotte mo"],
+	[105.8, 380, 450, "kimi wa"],
+	[107.1, 780, 260, "mada konai"],
+	[111.5, 300, 500, "kiete"],
+	[112.3, 600, 200, "shimau"],
+	[116.4, 520, 400, "sono"],
+	[117.3, 400, 260, "mae ni"]
+]
 
 var song_list = [
 	[0, "shoujo rei", shoujo_rei_map, 75],
-	[1, "just be friends", just_be_friends_map, 1]
+	[1, "just be friends", just_be_friends_map, 116],
+	[2, "The Snow White \n Princess is", tswpi_map, 1]
 ]
 
 func get_beatmap(index):
 	match index:
 		0: return shoujo_rei_map
 		1: return just_be_friends_map
+		2: return tswpi_map
 	return[]
 	

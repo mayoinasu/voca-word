@@ -147,6 +147,7 @@ func check_song_end():
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("score")
 		await AudioPlayer.finished && $AnimationPlayer.animation_finished
+		
 		$AnimationPlayer.play("fade out")
 		await $AnimationPlayer.animation_finished
 	

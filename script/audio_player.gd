@@ -8,6 +8,7 @@ const full_combo = preload("res://audio-asset/freesound_community-yay-6120.mp3")
 const song_end = preload("res://audio-asset/freesound_community-yipee-45360.mp3")
 const shoujo_rei = preload("res://audio-asset/shoujo-rei.WAV")
 const just_be_friends = preload("res://audio-asset/Just be friends - full - seriously.WAV")
+const the_snow_white_princess_is = preload ("res://audio-asset/The snow white princess is - full.WAV")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -39,4 +40,7 @@ func _play_level(song_selected):
 		_play_music(shoujo_rei)
 	if song_selected == 1:
 		_play_music(just_be_friends)
+	if song_selected == 2:
+		_play_music(the_snow_white_princess_is)
+		
 	

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3ihamucphasd"
+path="res://.godot/imported/the snow white princess is - preview.WAV-13a41ffc457315311d095a48fe4c03e4.sample"
+
+[deps]
+
+source_file="res://audio-asset/the snow white princess is - preview.WAV"
+dest_files=["res://.godot/imported/the snow white princess is - preview.WAV-13a41ffc457315311d095a48fe4c03e4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

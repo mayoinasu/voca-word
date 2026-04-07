@@ -16,6 +16,9 @@ func _song(number):
 	if number == 1:
 		$"just-be-friend".visible = true
 		$"just-be-friend/AudioStreamPlayer2D".play()
+	if number == 2:
+		$"the-snow-white-princess".visible = true
+		$"the-snow-white-princess/AudioStreamPlayer2D".play()
 
 
 
@@ -24,6 +27,8 @@ func _close_all():
 	$"shoujo-rei/AudioStreamPlayer2D".stop()
 	$"just-be-friend".visible = false
 	$"just-be-friend/AudioStreamPlayer2D".stop()
+	$"the-snow-white-princess".visible = false
+	$"the-snow-white-princess/AudioStreamPlayer2D".stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,6 +50,6 @@ func _on_left_pressed() -> void:
 func _on_select_pressed() -> void:
 	if number == 0:
 		SongsData.song_selected = 0
-	elif number == 1:
+	if number == 1:
 		SongsData.song_selected = 1
 	get_tree().change_scene_to_file("res://scene/player_map.tscn")
