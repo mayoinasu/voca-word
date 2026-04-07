@@ -1,0 +1,345 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpre0w26ug1kx"]
+
+[ext_resource type="Script" uid="uid://bwx6xfht862u3" path="res://script/player_scene.gd" id="1_p40o6"]
+[ext_resource type="Texture2D" uid="uid://b0my6wgs8gnwv" path="res://image/background/level.png" id="2_cnxr8"]
+[ext_resource type="FontFile" uid="uid://btb68v0aeqcn0" path="res://fonts/bristone/Bristone.otf" id="3_pn04s"]
+[ext_resource type="FontFile" uid="uid://c8d838phnq48p" path="res://fonts/hemi_head/HemiHead-BoldItalic.otf" id="4_5vgyw"]
+
+[sub_resource type="Animation" id="Animation_b7i53"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label7:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label7:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 288)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Label8:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Label9:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Label10:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qffs6"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_52yel"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pxq76"]
+resource_name = "full combo"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label6:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label6:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 288), Vector2(400, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_cq31n"]
+resource_name = "score"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label8:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label9:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.55, 1.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label10:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2666667, 2.04),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tv3pk"]
+resource_name = "song end"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label7:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 288), Vector2(400, 264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cq31n"]
+_data = {
+&"RESET": SubResource("Animation_b7i53"),
+&"fade in": SubResource("Animation_qffs6"),
+&"fade out": SubResource("Animation_52yel"),
+&"full combo": SubResource("Animation_pxq76"),
+&"score": SubResource("Animation_cq31n"),
+&"song end": SubResource("Animation_tv3pk")
+}
+
+[node name="Control" type="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p40o6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_cnxr8")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 416.0
+offset_top = 72.0
+offset_right = 735.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("3_pn04s")
+theme_override_font_sizes/font_size = 40
+text = "Shoujo Rei"
+
+[node name="ComboLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 128.0
+offset_right = 907.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 22
+text = "Combo"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 88.0
+offset_right = 912.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 28
+text = "Score"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cq31n")
+}
+
+[node name="Label6" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 288.0
+offset_right = 738.0
+offset_bottom = 357.0009
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 60
+text = "Full Combo!"
+
+[node name="Label7" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 400.0
+offset_top = 288.0
+offset_right = 738.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 60
+text = "Song Clear!"
+
+[node name="Label8" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 480.0
+offset_top = 424.0
+offset_right = 1056.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 40
+text = "Highest combo = "
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 624.0
+offset_top = 480.0
+offset_right = 872.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 50
+text = "90"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="AnimationPlayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 216.0
+offset_top = 448.0
+offset_right = 473.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("4_5vgyw")
+theme_override_font_sizes/font_size = 50
+text = "Well done!"
+horizontal_alignment = 1

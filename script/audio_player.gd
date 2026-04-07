@@ -35,4 +35,8 @@ func _full_combo():
 	
 func _play_shoujo_rei():
 	_play_music(shoujo_rei)
+
+func _play_level(song_selected):
+	if song_selected == 0:
+		_play_music(shoujo_rei)
 	
