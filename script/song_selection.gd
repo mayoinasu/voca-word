@@ -45,4 +45,6 @@ func _on_left_pressed() -> void:
 func _on_select_pressed() -> void:
 	if number == 0:
 		SongsData.song_selected = 0
-		get_tree().change_scene_to_file("res://scene/player_map.tscn")
+	elif number == 1:
+		SongsData.song_selected = 1
+	get_tree().change_scene_to_file("res://scene/player_map.tscn")

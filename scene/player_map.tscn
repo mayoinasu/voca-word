@@ -258,19 +258,20 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_cnxr8")
 
 [node name="Label" type="Label" parent="Node2D"]
-offset_left = 416.0
+offset_left = 184.0
 offset_top = 72.0
-offset_right = 735.0
+offset_right = 968.0
 offset_bottom = 126.0
 theme_override_fonts/font = ExtResource("3_pn04s")
 theme_override_font_sizes/font_size = 40
 text = "Shoujo Rei"
+horizontal_alignment = 1
 
 [node name="ComboLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 888.0
 offset_top = 128.0
-offset_right = 907.0
+offset_right = 963.0
 offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("4_5vgyw")
 theme_override_font_sizes/font_size = 22
@@ -278,9 +279,9 @@ text = "Combo"
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 832.0
+offset_left = 888.0
 offset_top = 88.0
-offset_right = 912.0
+offset_right = 968.0
 offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("4_5vgyw")
 theme_override_font_sizes/font_size = 28

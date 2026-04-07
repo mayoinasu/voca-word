@@ -7,6 +7,7 @@ const tut3 = preload("res://audio-asset/Miku3.WAV")
 const full_combo = preload("res://audio-asset/freesound_community-yay-6120.mp3")
 const song_end = preload("res://audio-asset/freesound_community-yipee-45360.mp3")
 const shoujo_rei = preload("res://audio-asset/shoujo-rei.WAV")
+const just_be_friends = preload("res://audio-asset/Just be friends - full - seriously.WAV")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
@@ -32,11 +33,10 @@ func _song_end():
 
 func _full_combo():
 	_play_music(full_combo)
-	
-func _play_shoujo_rei():
-	_play_music(shoujo_rei)
 
 func _play_level(song_selected):
 	if song_selected == 0:
 		_play_music(shoujo_rei)
+	if song_selected == 1:
+		_play_music(just_be_friends)
 	

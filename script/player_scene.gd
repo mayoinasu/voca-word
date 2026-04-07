@@ -133,7 +133,9 @@ func _process(delta: float) -> void:
 		highest = combo
 
 func check_song_end():
+	
 	if next_index >= beatmap.size():
+		var tree = get_tree()
 		await get_tree().create_timer(4).timeout
 		if combo == SongsData.song_list[SongsData.song_selected][3]:
 			$AnimationPlayer.play("full combo")
@@ -144,6 +146,8 @@ func check_song_end():
 		$AnimationPlayer/Label9.text = "%d x" %highest
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("score")
-		await AudioPlayer.finished
+		await AudioPlayer.finished && $AnimationPlayer.animation_finished
 		$AnimationPlayer.play("fade out")
-		get_tree().change_scene_to_file("res://scene/song_selection.tscn")
+		await $AnimationPlayer.animation_finished
+	
+		tree.change_scene_to_file("res://scene/song_selection.tscn")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2fw1em1a5v3b"
+path="res://.godot/imported/Just be friends - preview.WAV-a641db909073f6517259eab2d8fadf69.sample"
+
+[deps]
+
+source_file="res://audio-asset/Just be friends - preview.WAV"
+dest_files=["res://.godot/imported/Just be friends - preview.WAV-a641db909073f6517259eab2d8fadf69.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
