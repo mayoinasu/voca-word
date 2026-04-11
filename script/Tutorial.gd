@@ -194,10 +194,10 @@ func spawn_button(index, is_main):
 	btn.is_tutorial = not is_main
 	btn.spawn_time = entry[0]
 
-	# Current note is the one just spawned
+	
 	current_btn = btn
 
-	# Preview points to the NEXT note after this one
+	
 	if is_main and index + 1 < beatmap.size():
 		var time_now = beatmap[index][0]
 		var time_next = beatmap[index + 1][0]
@@ -205,7 +205,7 @@ func spawn_button(index, is_main):
 		time_until_next = time_to_next
 		next_note_preview_pos = Vector2(beatmap[index + 1][1], beatmap[index + 1][2] +20)
 	else:
-		# No next note, clear the preview
+		
 		next_note_preview_pos = Vector2.ZERO
 		line_progress = 0.0
 
@@ -224,7 +224,7 @@ func _on_tut_note_clicked(btn, is_main):
 		var time_diff = abs(song_time - btn.spawn_time)
 
 		if time_diff <= PERFECT_WINDOW:
-			score += 300 * (1 + combo / 10.0)  # Combo slightly boosts perfect score
+			score += 300 * (1 + combo / 10.0) 
 			combo += 1
 		elif time_diff <= GOOD_WINDOW:
 			score += 100

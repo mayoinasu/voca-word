@@ -26,3 +26,10 @@ func _on_yes_pressed() -> void:
 	$option/AnimationPlayer.play("fade out")
 	await $option/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scene/tutoriall.tscn")
+
+
+func _on_no_pressed() -> void:
+	$option/AnimationPlayer.play("fade out")
+	await $option/AnimationPlayer.animation_finished
+	AudioPlayer.stop()
+	get_tree().change_scene_to_file("res://scene/song_selection.tscn")

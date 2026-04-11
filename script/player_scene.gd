@@ -37,6 +37,7 @@ func _ready() -> void:
 	add_child (preview_dot)
 	
 	AudioPlayer._play_level(SongsData.song_selected)
+	print(SongsData.song_selected)
 
 	update_score_ui()
 	
@@ -142,7 +143,10 @@ func check_song_end():
 			$AnimationPlayer/Label10.text = "Fantastic!"
 		else:
 			$AnimationPlayer.play("song end")
-			$AnimationPlayer/Label10.text = "Well done!"
+			if highest >= (SongsData.song_list[SongsData.song_selected][3])/2:
+				$AnimationPlayer/Label10.text = "Well done!"
+			else:
+				$AnimationPlayer/Label10.text = "Good!"
 		$AnimationPlayer/Label9.text = "%d x" %highest
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("score")
@@ -150,5 +154,6 @@ func check_song_end():
 		
 		$AnimationPlayer.play("fade out")
 		await $AnimationPlayer.animation_finished
+		await get_tree().create_timer(2).timeout
 	
 		tree.change_scene_to_file("res://scene/song_selection.tscn")

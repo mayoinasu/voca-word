@@ -1,4 +1,4 @@
-# rhythm_button.gd
+
 extends Control
 
 signal button_hit

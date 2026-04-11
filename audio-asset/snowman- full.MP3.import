@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnpl5ef3hfoq2"
+path="res://.godot/imported/snowman- full.MP3-10f0a3faf733bd6df342dafcb6539434.mp3str"
+
+[deps]
+
+source_file="res://audio-asset/snowman- full.MP3"
+dest_files=["res://.godot/imported/snowman- full.MP3-10f0a3faf733bd6df342dafcb6539434.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

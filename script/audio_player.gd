@@ -9,14 +9,19 @@ const song_end = preload("res://audio-asset/freesound_community-yipee-45360.mp3"
 const shoujo_rei = preload("res://audio-asset/shoujo-rei.WAV")
 const just_be_friends = preload("res://audio-asset/Just be friends - full - seriously.WAV")
 const the_snow_white_princess_is = preload ("res://audio-asset/The snow white princess is - full.WAV")
+const bring_it_on = preload("res://audio-asset/bring it on.WAV")
+const snowman = preload ("res://audio-asset/snowman- full.MP3")
 
 func _play_music(music: AudioStream, volume = 0.0):
-	if stream == music:
-		return
+	if stream != music:
+		stream = music
 		
+	stop()
+	seek(0)
 	stream = music
 	volume_db = volume
 	play()
+	
 
 func _play_home_bgm():
 	_play_music(home_bgm)
@@ -42,5 +47,9 @@ func _play_level(song_selected):
 		_play_music(just_be_friends)
 	if song_selected == 2:
 		_play_music(the_snow_white_princess_is)
+	if song_selected == 3:
+		_play_music(bring_it_on)
+	if song_selected == 4:
+		_play_music(snowman)
 		
 	

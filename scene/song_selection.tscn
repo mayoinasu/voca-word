@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://6nifct1v7ura"]
+[gd_scene load_steps=26 format=3 uid="uid://6nifct1v7ura"]
 
 [ext_resource type="Script" uid="uid://beppwd88rvj02" path="res://script/song_selection.gd" id="1_0ve7w"]
 [ext_resource type="Texture2D" uid="uid://cwffs31y7wm3b" path="res://image/background/song selection.png" id="1_vx71o"]
@@ -17,8 +17,65 @@
 [ext_resource type="AudioStream" uid="uid://b2fw1em1a5v3b" path="res://audio-asset/Just be friends - preview.WAV" id="15_jnbvv"]
 [ext_resource type="Texture2D" uid="uid://d2joqs0ddoybp" path="res://image/cover/the-snow-white-princess-is-cover.png" id="16_4gih5"]
 [ext_resource type="AudioStream" uid="uid://b3ihamucphasd" path="res://audio-asset/the snow white princess is - preview.WAV" id="17_kiq32"]
+[ext_resource type="Texture2D" uid="uid://ttenkjnkjnj3" path="res://image/cover/bring-it-on-preview.png" id="18_itk38"]
+[ext_resource type="AudioStream" uid="uid://cdm74ovrnlsje" path="res://audio-asset/bring it on - preview.WAV" id="19_11h86"]
+[ext_resource type="Texture2D" uid="uid://i2f1yo25blki" path="res://image/cover/snowman- preview.png" id="20_1y2lr"]
+[ext_resource type="AudioStream" uid="uid://cawpunhqb0pp" path="res://audio-asset/snowman-preview.MP3" id="21_2bb3b"]
+
+[sub_resource type="Animation" id="Animation_11h86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_itk38"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1y2lr"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bb3b"]
+_data = {
+&"RESET": SubResource("Animation_11h86"),
+&"fade in": SubResource("Animation_itk38"),
+&"fade out": SubResource("Animation_1y2lr")
+}
 
 [node name="Node2D" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_0ve7w")
 
 [node name="background" type="Node2D" parent="."]
@@ -75,6 +132,66 @@ offset_bottom = 617.0
 theme_override_fonts/font = ExtResource("2_h4qw0")
 theme_override_font_sizes/font_size = 110
 text = "Select"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background"]
+libraries = {
+&"": SubResource("AnimationLibrary_2bb3b")
+}
+
+[node name="Label3" type="Label" parent="background"]
+offset_left = 460.0
+offset_top = 136.0
+offset_right = 692.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Dificulty: "
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="background"]
+offset_left = 872.0
+offset_top = 40.0
+offset_right = 1104.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Song finished: /"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="background"]
+offset_left = 848.0
+offset_top = 159.99998
+offset_right = 1068.0
+offset_bottom = 183.99998
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Finish all song to get new feature"
+horizontal_alignment = 1
+
+[node name="next_bonus" type="Node2D" parent="background"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="background/next_bonus"]
+offset_left = 840.0
+offset_top = 152.00002
+offset_right = 2760.0
+offset_bottom = 1232.0
+scale = Vector2(0.12, 0.12)
+texture_normal = ExtResource("7_00n3g")
+texture_pressed = ExtResource("8_0ve7w")
+texture_hover = ExtResource("9_2moh6")
+
+[node name="Label6" type="Label" parent="background/next_bonus/TextureButton"]
+modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_left = 625.0
+offset_top = 449.99927
+offset_right = 1320.0
+offset_bottom = 654.99927
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 180
+text = "UNLOCK"
+horizontal_alignment = 1
 
 [node name="shoujo-rei" type="Node2D" parent="."]
 visible = false
@@ -162,6 +279,65 @@ text = "Noboru-P  ft. MEIKO"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="the-snow-white-princess"]
 stream = ExtResource("17_kiq32")
+
+[node name="bring-it-on" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="bring-it-on"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_itk38")
+
+[node name="Label" type="Label" parent="bring-it-on"]
+offset_left = 504.0
+offset_top = 488.0
+offset_right = 656.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 30
+text = "Bring it on"
+
+[node name="Label2" type="Label" parent="bring-it-on"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Giga/Reol ft. Kagamine Rin, Kagamine Len"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="bring-it-on"]
+stream = ExtResource("19_11h86")
+
+[node name="snowman" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="snowman"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("20_1y2lr")
+
+[node name="Label" type="Label" parent="snowman"]
+offset_left = 504.0
+offset_top = 488.0
+offset_right = 656.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 30
+text = "Snowman"
+
+[node name="Label2" type="Label" parent="snowman"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Halyosy ft. KAITO"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="snowman"]
+stream = ExtResource("21_2bb3b")
 
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]
