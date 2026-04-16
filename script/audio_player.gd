@@ -11,6 +11,8 @@ const just_be_friends = preload("res://audio-asset/Just be friends - full - seri
 const the_snow_white_princess_is = preload ("res://audio-asset/The snow white princess is - full.WAV")
 const bring_it_on = preload("res://audio-asset/bring it on.WAV")
 const snowman = preload ("res://audio-asset/snowman- full.MP3")
+const mozaik_role = preload ("res://audio-asset/mozaik-role-full-soundfix.MP3")
+const ochame_kinou = preload("res://audio-asset/ochame-kinou-full.MP3")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream != music:
@@ -51,5 +53,7 @@ func _play_level(song_selected):
 		_play_music(bring_it_on)
 	if song_selected == 4:
 		_play_music(snowman)
-		
-	
+	if song_selected == 5:
+		_play_music(mozaik_role)
+	if song_selected == 6:
+		_play_music(ochame_kinou)

@@ -119,14 +119,14 @@ func _ready():
 	
 	var score_label = Label.new()
 	score_label.name = "ScoreLabel"
-	score_label.position = Vector2(890,90)
+	score_label.position = Vector2(900,60)
 	score_label.add_theme_font_size_override("font_size", 28)
 	score_label.add_theme_font_override("font", my_font)
 	add_child(score_label)
 	
 	var combo_label = Label.new()
 	combo_label.name = "ComboLabel"
-	combo_label.position = Vector2(890,120)
+	combo_label.position = Vector2(900,90)
 	combo_label.add_theme_font_size_override("font_size",22)
 	combo_label.add_theme_font_override("font", my_font)
 	add_child(combo_label)
@@ -274,7 +274,6 @@ func check_song_end():
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("fade out")
 		await get_tree().create_timer(6).timeout
-		AudioPlayer._play_home_bgm()
 		get_tree().change_scene_to_file("res://scene/song_selection.tscn")
 		
 		

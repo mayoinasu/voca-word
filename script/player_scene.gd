@@ -23,6 +23,7 @@ const PERFECT_WINDOW = 1.00
 const GOOD_WINDOW = 1.85
 
 var highest = 0
+var dot_from_pos = Vector2.ZERO
 
 
 var beatmap =[]
@@ -75,6 +76,7 @@ func spawn_button(index):
 	
 	
 func _on_note_missed(btn):
+	dot_from_pos = btn.position + btn.get_node("Button").size/2
 	btn.queue_free() 
 	waiting_for_click = false
 	combo = 0
@@ -96,7 +98,8 @@ func _on_note_clicked(btn):
 		
 	update_score_ui()
 	
-	last_click_pos = btn.position + btn.get_node("Button").size / 2
+	dot_from_pos = btn.position + btn.get_node("Button").size/2
+	last_click_pos = dot_from_pos
 	btn.queue_free()
 	waiting_for_click = false
 	check_song_end()
@@ -104,13 +107,16 @@ func _on_note_clicked(btn):
 func update_preview_line():
 	preview_dot.clear_points()
 
-	if current_btn == null or not is_instance_valid(current_btn):
-		return
-
 	if next_note_preview_pos == Vector2.ZERO:
 		return
-
-	var from_pos = current_btn.position + current_btn.get_node("Button").size / 2
+	var from_pos = Vector2.ZERO
+	if current_btn != null and is_instance_valid(current_btn):
+		from_pos = current_btn.position + current_btn.get_node("Button").size/2
+	elif dot_from_pos != Vector2.ZERO:
+		from_pos = dot_from_pos
+	else:
+		return
+	
 	var dot_pos = from_pos.lerp(next_note_preview_pos, line_progress)
 	preview_dot.add_point(dot_pos + Vector2(-4, 0))
 	preview_dot.add_point(dot_pos + Vector2(4, 0))
@@ -155,5 +161,4 @@ func check_song_end():
 		$AnimationPlayer.play("fade out")
 		await $AnimationPlayer.animation_finished
 		await get_tree().create_timer(2).timeout
-	
 		tree.change_scene_to_file("res://scene/song_selection.tscn")

@@ -259,7 +259,7 @@ offset_top = 320.0
 offset_right = 1137.0
 offset_bottom = 447.0
 theme_override_fonts/font = ExtResource("3_bblpj")
-text = "This game is a fan-made project created for non-commercial and portfolio purposes only.
+text = "This game is a fan-made project created for non-commercial purposes .
 All songs, characters, and related content used in this game 
 belong to their respective original creators and copyright holders. 
 No ownership is claimed. No copyright infringement is intended."
