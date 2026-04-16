@@ -1,12 +1,13 @@
 extends Node
 
-var song_selected = 6
+var song_selected = 0
 var played = 0
 var total = 5
 var song_buy = 0
 var song_buy_array = []
 var bought1 = false
 var bought2 = false
+var full_combo_total = 4
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],
@@ -640,7 +641,7 @@ var song_list = [
 	[3, "Bring it On", bring_it_on_map, 75, false],
 	[4, "Snowman", snowman_map, 111, false],
 	[5, "Mozaik Role", mozaik_role_map, 65, false],
-	[6, "Ochame Kinou", ochame_kinou_map, 20, false]
+	[6, "Ochame Kinou", ochame_kinou_map, 93, false]
 ]
 
 func get_beatmap(index):

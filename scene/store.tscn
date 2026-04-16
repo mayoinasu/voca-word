@@ -170,6 +170,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_p4htp")
 }
 
+[node name="Label2" type="Label" parent="background"]
+offset_left = 464.0
+offset_top = 616.0
+offset_right = 693.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(0.41700238, 0.26553842, 0.1439409, 1)
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 20
+text = "Not enough Full Combo"
+
 [node name="mozaik-role" type="Node2D" parent="."]
 visible = false
 
@@ -201,7 +211,6 @@ horizontal_alignment = 1
 stream = ExtResource("19_i6t0e")
 
 [node name="ochame-kinou" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ochame-kinou"]
 position = Vector2(576, 320)
@@ -258,27 +267,29 @@ text = "Unlock new songs using your Full Combo count!
  Tap the buy button, and the song will be 
 added to your selection. Enjoy!"
 
-[node name="TextureButton" type="TextureButton" parent="Sprite2D"]
-offset_left = -299.99976
-offset_top = 26.666626
-offset_right = 1620.0002
+[node name="back" type="TextureButton" parent="Sprite2D"]
+offset_left = -306.66653
+offset_top = 26.666674
+offset_right = 1613.3335
 offset_bottom = 1106.6666
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("14_g2jgw")
 texture_pressed = ExtResource("15_bcmab")
 texture_hover = ExtResource("16_e82rw")
 
-[node name="Label" type="Label" parent="Sprite2D/TextureButton"]
+[node name="Label" type="Label" parent="Sprite2D/back"]
 layout_mode = 0
-offset_left = 794.4448
-offset_top = 488.88892
-offset_right = 1288.4448
-offset_bottom = 622.8889
+offset_left = 800.0
+offset_top = 466.66724
+offset_right = 1169.0
+offset_bottom = 600.66724
 theme_override_fonts/font = ExtResource("3_p4htp")
 theme_override_font_sizes/font_size = 100
-text = "Back"
+text = "back"
 
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="background/question" to="." method="_on_question_pressed"]
 [connection signal="pressed" from="background/home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="background/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Sprite2D/back" to="." method="_on_back_pressed"]

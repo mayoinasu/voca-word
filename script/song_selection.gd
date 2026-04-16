@@ -9,7 +9,7 @@ func _ready() -> void:
 	_song(0)
 	
 	$background/Label4.text = "Songs Played: %d / %d" % [SongsData.played, 5 + SongsData.song_buy]
-		
+	$background/Label2.text = "Full combo count: %d" %SongsData.full_combo_total
 	
 
 func _song(number):
