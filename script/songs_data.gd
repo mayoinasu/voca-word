@@ -8,7 +8,7 @@ var song_buy_array = []
 var bought1 = false
 var bought2 = false
 var bought3 = false
-var full_combo_total = 6
+var full_combo_total = 0
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],

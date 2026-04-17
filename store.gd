@@ -96,7 +96,7 @@ func _on_texture_button_pressed() -> void:
 			SongsData.bought3 = true
 			SongsData.song_buy += 1
 			SongsData.song_buy_array.append("Charles")
-		elif number == 1 && SongsData.full_combo_total < 2:
+		elif number == 2 && SongsData.full_combo_total < 2:
 			$background/Label2.visible = true
 			
 
