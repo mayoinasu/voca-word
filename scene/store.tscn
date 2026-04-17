@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dotpc7vw6oo8v"]
+[gd_scene load_steps=29 format=3 uid="uid://dotpc7vw6oo8v"]
 
 [ext_resource type="Script" uid="uid://brs2q3opec5ae" path="res://store.gd" id="1_j6dk4"]
 [ext_resource type="Texture2D" uid="uid://duwfrteegk8cg" path="res://image/background/store.png" id="2_qx50h"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://ds16dc8rnnh6v" path="res://image/background/help.png" id="20_k31sh"]
 [ext_resource type="Texture2D" uid="uid://d3o0ut78pauiw" path="res://image/cover/ochame-kinou-cover.png" id="20_p4htp"]
 [ext_resource type="AudioStream" uid="uid://b0fw8jjefm8ec" path="res://audio-asset/ochame-kinou-preview.MP3" id="21_63rp4"]
+[ext_resource type="Texture2D" uid="uid://bks28xx78xqyf" path="res://image/cover/charles-cover.png" id="22_0h6cy"]
+[ext_resource type="AudioStream" uid="uid://45fluide5kp6" path="res://audio-asset/charles-preview.MP3" id="23_6vpft"]
 
 [sub_resource type="Animation" id="Animation_j6dk4"]
 resource_name = "fade in"
@@ -180,6 +182,15 @@ theme_override_fonts/font = ExtResource("17_uxej0")
 theme_override_font_sizes/font_size = 20
 text = "Not enough Full Combo"
 
+[node name="Label3" type="Label" parent="background"]
+offset_left = 480.0
+offset_top = 136.0
+offset_right = 675.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 20
+text = "Price = 2 full combo"
+
 [node name="mozaik-role" type="Node2D" parent="."]
 visible = false
 
@@ -211,6 +222,7 @@ horizontal_alignment = 1
 stream = ExtResource("19_i6t0e")
 
 [node name="ochame-kinou" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ochame-kinou"]
 position = Vector2(576, 320)
@@ -238,6 +250,35 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ochame-kinou"]
 stream = ExtResource("21_63rp4")
+
+[node name="charles" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="charles"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("22_0h6cy")
+
+[node name="Label" type="Label" parent="charles"]
+offset_left = 520.0
+offset_top = 488.0
+offset_right = 634.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 30
+text = "Charles"
+
+[node name="Label2" type="Label" parent="charles"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 20
+text = "Ballon ft. Flower"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="charles"]
+stream = ExtResource("23_6vpft")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

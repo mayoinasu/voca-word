@@ -13,6 +13,7 @@ const bring_it_on = preload("res://audio-asset/bring it on.WAV")
 const snowman = preload ("res://audio-asset/snowman- full.MP3")
 const mozaik_role = preload ("res://audio-asset/mozaik-role-full-soundfix.MP3")
 const ochame_kinou = preload("res://audio-asset/ochame-kinou-fulll-new.MP3")
+const charles = preload("res://audio-asset/charles-full-new.MP3")
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream != music:
@@ -57,3 +58,5 @@ func _play_level(song_selected):
 		_play_music(mozaik_role)
 	if song_selected == 6:
 		_play_music(ochame_kinou)
+	if song_selected == 7:
+		_play_music(charles)

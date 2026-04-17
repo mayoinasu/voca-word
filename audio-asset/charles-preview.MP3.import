@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/charles-preview.MP3-b9d6b31e52fd5e1948f83302c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

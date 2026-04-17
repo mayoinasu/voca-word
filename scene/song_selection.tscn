@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://6nifct1v7ura"]
+[gd_scene load_steps=35 format=3 uid="uid://6nifct1v7ura"]
 
 [ext_resource type="Script" uid="uid://beppwd88rvj02" path="res://script/song_selection.gd" id="1_0ve7w"]
 [ext_resource type="Texture2D" uid="uid://cwffs31y7wm3b" path="res://image/background/song selection.png" id="1_vx71o"]
@@ -28,6 +28,8 @@
 [ext_resource type="AudioStream" uid="uid://bpyu28byfnhbq" path="res://audio-asset/mozaik-role-preview.MP3" id="23_kb3uy"]
 [ext_resource type="Texture2D" uid="uid://d3o0ut78pauiw" path="res://image/cover/ochame-kinou-cover.png" id="27_o7h4u"]
 [ext_resource type="AudioStream" uid="uid://b0fw8jjefm8ec" path="res://audio-asset/ochame-kinou-preview.MP3" id="28_n6wuy"]
+[ext_resource type="Texture2D" uid="uid://bks28xx78xqyf" path="res://image/cover/charles-cover.png" id="29_5kcvy"]
+[ext_resource type="AudioStream" uid="uid://45fluide5kp6" path="res://audio-asset/charles-preview.MP3" id="30_bbtm7"]
 
 [sub_resource type="Animation" id="Animation_11h86"]
 length = 0.001
@@ -411,6 +413,36 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ochame-kinou"]
 stream = ExtResource("28_n6wuy")
+
+[node name="charles" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="charles"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_5kcvy")
+
+[node name="Label" type="Label" parent="charles"]
+offset_left = 520.0
+offset_top = 488.0
+offset_right = 634.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 30
+text = "Charles"
+
+[node name="Label2" type="Label" parent="charles"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Ballon ft. Flower"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="charles"]
+stream = ExtResource("30_bbtm7")
 
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]

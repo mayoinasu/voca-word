@@ -44,6 +44,10 @@ func _song(number):
 			$"ochame-kinou".visible = true
 			$"ochame-kinou/AudioStreamPlayer2D".play()
 			$background/Label3.text = "Dificulty: medium"
+		if scanning == "Charles":
+			$charles.visible = true
+			$charles/AudioStreamPlayer2D.play()
+			$background/Label3.text = "Dificulty: medium"
 	if number == 6:
 		scanning = SongsData.song_buy_array[1]
 		if scanning == "Mozaik Role":
@@ -53,6 +57,24 @@ func _song(number):
 		if scanning == "Ochame Kinou":
 			$"ochame-kinou".visible = true
 			$"ochame-kinou/AudioStreamPlayer2D".play()
+			$background/Label3.text = "Dificulty: medium"
+		if scanning == "Charles":
+			$charles.visible = true
+			$charles/AudioStreamPlayer2D.play()
+			$background/Label3.text = "Dificulty: medium"
+	if number == 7:
+		scanning = SongsData.song_buy_array[1]
+		if scanning == "Mozaik Role":
+			$"mozaik-role".visible = true
+			$"mozaik-role/AudioStreamPlayer2D".play()
+			$background/Label3.text = "Dificulty: easy"
+		if scanning == "Ochame Kinou":
+			$"ochame-kinou".visible = true
+			$"ochame-kinou/AudioStreamPlayer2D".play()
+			$background/Label3.text = "Dificulty: medium"
+		if scanning == "Charles":
+			$charles.visible = true
+			$charles/AudioStreamPlayer2D.play()
 			$background/Label3.text = "Dificulty: medium"
 
 func _close_all():
@@ -70,6 +92,8 @@ func _close_all():
 	$"mozaik-role/AudioStreamPlayer2D".stop()
 	$"ochame-kinou".visible = false
 	$"ochame-kinou/AudioStreamPlayer2D".stop()
+	$charles.visible = false
+	$charles/AudioStreamPlayer2D.stop()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -111,12 +135,24 @@ func _on_select_pressed() -> void:
 			SongsData.song_selected = 5
 		elif scanning == "Ochame Kinou":
 			SongsData.song_selected = 6
+		elif scanning == "Charles":
+			SongsData.song_selected = 7
 	if number == 6:
 		scanning = SongsData.song_buy_array[1]
 		if scanning == "Mozaik Role":
 			SongsData.song_selected = 5
 		elif scanning == "Ochame Kinou":
 			SongsData.song_selected = 6
+		elif scanning == "Charles":
+			SongsData.song_selected = 7
+	if number == 7:
+		scanning = SongsData.song_buy_array[2]
+		if scanning == "Mozaik Role":
+			SongsData.song_selected = 5
+		elif scanning == "Ochame Kinou":
+			SongsData.song_selected = 6
+		elif scanning == "Charles":
+			SongsData.song_selected = 7
 	if SongsData.song_list[number][4] == false:
 		SongsData.played += 1
 		SongsData.song_list[number][4] = true

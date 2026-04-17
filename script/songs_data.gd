@@ -7,7 +7,8 @@ var song_buy = 0
 var song_buy_array = []
 var bought1 = false
 var bought2 = false
-var full_combo_total = 4
+var bought3 = false
+var full_combo_total = 6
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],
@@ -634,6 +635,80 @@ var ochame_kinou_map =[
 	[85.4, 300, 350, "matasete"]
 ]
 
+var charles_map = [
+	[2.0, 800, 200, "sayonara wa"],
+	[3.1, 200, 500, "anata"],
+	[3.6, 300, 300, "kara"],
+	[4.1, 700, 350, "itta"],
+	[4.7, 180, 180, "sore"],
+	[5.1, 800, 290, "nano ni"],
+	[5.9, 400, 400, "hoo wo"],
+	[6.4, 200, 300, "nurashite"],
+	[7.1, 800, 500, "shimau no"],
+	[9.0, 180, 300, "sou yatte"],
+	[9.6, 500, 200, "kinou no"],
+	[10.1, 800, 300, "koto mo"],
+	[10.5, 300, 400, "keshite"],
+	[11.0, 500, 500, "shimau nara"],
+	[11.7, 300, 200, "mou ii yo"],
+	[14.6, 200, 500, "waratte"],
+	[28.4, 700, 300, "hanataba wo"],
+	[29.6, 300, 200, "kakaete"],
+	[30.3, 400, 500, "aruita"],
+	[31.3, 800, 190, "imi mo"],
+	[31.7, 200, 500, "naku tada"],
+	[32.8, 500, 200, "machi wo"],
+	[33.7, 200, 200, "mioroshita"],
+	[35.5, 400, 500, "kou yatte"],
+	[36.1, 700, 200, "risou no"],
+	[36.5, 800, 400, "fuchi ni"],
+	[36.9, 300, 180, "kokoro wo"],
+	[37.4, 200, 500, "okisatte iku"],
+	[38.3, 500, 300, "mou ii ka"],
+	[41.1, 700, 400, "karappo"],
+	[42.0, 600, 200, "de iyou"],
+	[43.5, 180, 300, "sore de"],
+	[44.6, 400, 500, "itsuka"],
+	[45.6, 800, 300, "fukai"],
+	[46.3, 700, 200, "ao de"],
+	[46.8, 200, 400, "mitashita"],
+	[48.0, 500, 300, "no nara"],
+	[48.7, 800, 200, "dou darou"],
+	[50.1, 300, 400, "konna"],
+	[51.2, 700, 500, "fuu ni"],
+	[52.2, 400, 190, "nayameru"],
+	[53.0, 200, 500, "no kana"],
+	[54.5, 350, 400, "ai wo"],
+	[55.2, 700, 200, "utatte"],
+	[56.1, 300, 500, "utatte"],
+	[57.0, 500, 400, "kumo no ue"],
+	[59.0, 200, 500, "nigori"],
+	[59.6, 700, 300, "kitte wa"],
+	[60.4, 500, 200, "mienai ya"],
+	[62.5, 800, 190, "iya"],
+	[63.4, 500, 500, "iya"],
+	[65.4, 700, 400, "tooku"],
+	[66.1, 300, 200, "egaiteta"],
+	[67.4, 800, 200, "hibi wo"],
+	[68.5, 200, 300, "katatte"],
+	[69.4, 290, 500, "katatte"],
+	[70.2, 600, 300, "yoru no"],
+	[71.0, 500, 180, "mure"],
+	[72.5, 800, 400, "igamiatte"],
+	[73.4, 400, 500, "kiri ga"],
+	[74.4, 200, 200, "nai na"],
+	[75.8, 300, 500, "ina"],
+	[76.6, 600, 500, "ina"],
+	[81.1, 350, 400, "ai wo"],
+	[81.8, 700, 200, "utatte"],
+	[82.6, 300, 500, "utatte"],
+	[83.4, 500, 400, "kumo no ue"],
+	[88.2, 200, 300, "katatte"],
+	[89.2, 290, 500, "katatte"],
+	[90.2, 600, 300, "yoru no"],
+	[90.8, 500, 180, "mure"],
+]
+
 var song_list = [
 	[0, "shoujo rei", shoujo_rei_map, 75, false],
 	[1, "just be friends", just_be_friends_map, 116, false],
@@ -641,7 +716,8 @@ var song_list = [
 	[3, "Bring it On", bring_it_on_map, 75, false],
 	[4, "Snowman", snowman_map, 111, false],
 	[5, "Mozaik Role", mozaik_role_map, 65, false],
-	[6, "Ochame Kinou", ochame_kinou_map, 93, false]
+	[6, "Ochame Kinou", ochame_kinou_map, 93, false],
+	[7, "Charles", charles_map, 71, false]
 ]
 
 func get_beatmap(index):
@@ -653,5 +729,6 @@ func get_beatmap(index):
 		4: return snowman_map
 		5: return mozaik_role_map
 		6: return ochame_kinou_map
+		7: return charles_map
 	return[]
 	
