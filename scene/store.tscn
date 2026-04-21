@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dotpc7vw6oo8v"]
+[gd_scene load_steps=31 format=3 uid="uid://dotpc7vw6oo8v"]
 
 [ext_resource type="Script" uid="uid://brs2q3opec5ae" path="res://store.gd" id="1_j6dk4"]
 [ext_resource type="Texture2D" uid="uid://duwfrteegk8cg" path="res://image/background/store.png" id="2_qx50h"]
@@ -24,21 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://b0fw8jjefm8ec" path="res://audio-asset/ochame-kinou-preview.MP3" id="21_63rp4"]
 [ext_resource type="Texture2D" uid="uid://bks28xx78xqyf" path="res://image/cover/charles-cover.png" id="22_0h6cy"]
 [ext_resource type="AudioStream" uid="uid://45fluide5kp6" path="res://audio-asset/charles-preview.MP3" id="23_6vpft"]
-
-[sub_resource type="Animation" id="Animation_j6dk4"]
-resource_name = "fade in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
+[ext_resource type="Texture2D" uid="uid://b8a1ndwlnkdcr" path="res://image/cover/phony-cover.png" id="25_dfgsk"]
+[ext_resource type="AudioStream" uid="uid://ccyhuxrg6w4gy" path="res://audio-asset/phony-preview.MP3" id="26_f1wja"]
 
 [sub_resource type="Animation" id="Animation_qx50h"]
 length = 0.001
@@ -53,6 +40,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j6dk4"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_p4htp"]
@@ -327,6 +329,35 @@ offset_bottom = 600.66724
 theme_override_fonts/font = ExtResource("3_p4htp")
 theme_override_font_sizes/font_size = 100
 text = "back"
+
+[node name="phony" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="phony"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("25_dfgsk")
+
+[node name="Label" type="Label" parent="phony"]
+offset_left = 528.0
+offset_top = 488.0
+offset_right = 623.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 30
+text = "Phony"
+
+[node name="Label2" type="Label" parent="phony"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 20
+text = "Tsumiki ft. KAFU"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="phony"]
+stream = ExtResource("26_f1wja")
 
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]

@@ -146,10 +146,12 @@ func check_song_end():
 		await get_tree().create_timer(4).timeout
 		if combo == SongsData.song_list[SongsData.song_selected][3]:
 			$AnimationPlayer.play("full combo")
+			await $AnimationPlayer.animation_finished
 			$AnimationPlayer/Label10.text = "Fantastic!"
 			SongsData.full_combo_total += 1
 		else:
 			$AnimationPlayer.play("song end")
+			await $AnimationPlayer.animation_finished
 			if highest >= (SongsData.song_list[SongsData.song_selected][3])/2:
 				$AnimationPlayer/Label10.text = "Well done!"
 			else:
@@ -158,6 +160,12 @@ func check_song_end():
 		await get_tree().create_timer(1).timeout
 		$AnimationPlayer.play("score")
 		if SongsData.song_selected == 6:
+			await get_tree().create_timer(2).timeout
+			$AnimationPlayer.play("fade out")
+			await $AnimationPlayer.animation_finished
+			await get_tree().create_timer(2).timeout
+			tree.change_scene_to_file("res://scene/song_selection.tscn")
+		if SongsData.song_selected == 8:
 			await get_tree().create_timer(2).timeout
 			$AnimationPlayer.play("fade out")
 			await $AnimationPlayer.animation_finished

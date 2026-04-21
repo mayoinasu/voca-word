@@ -1,6 +1,6 @@
 extends Node
 
-var song_selected = 0
+var song_selected = 8
 var played = 0
 var total = 5
 var song_buy = 0
@@ -8,6 +8,7 @@ var song_buy_array = []
 var bought1 = false
 var bought2 = false
 var bought3 = false
+var bought4 = false
 var full_combo_total = 0
 
 var shoujo_rei_map = [
@@ -709,6 +710,127 @@ var charles_map = [
 	[90.8, 500, 180, "mure"],
 ]
 
+var phony_map = [
+	[2.9, 800, 180, "kono"],
+	[3.6, 300, 400, "yo de"],
+	[4.0, 500, 500, "zouka yori"],
+	[5.1, 200, 180, "kirei na"],
+	[6.4, 700, 400, "hana wa"],
+	[7.2, 300, 500, "nai wa"],
+	[8.0, 800, 200, "naze"],
+	[8.4, 200, 400, "naraba"],
+	[8.9, 400, 200, "subete wa"],
+	[10.0, 700, 300, "uso de"],
+	[10.7, 200, 300, "dekite iru"],
+	[12.1, 600, 500, "antipathy"],
+	[13.2, 300, 200, "world"],
+	[17.4, 200, 400, "La"],
+	[17.7, 400, 200, "Lu"],
+	[18.1, 400, 500, "La"],
+	[18.5, 600, 200, "Li"],
+	[18.7, 600, 500, "La"],
+	[29.9, 400, 300, "zetsubou no"],
+	[31.2, 700, 500, "ame wa"],
+	[31.9, 300, 400, "atashi no"],
+	[33.2, 200, 190, "kasa wo"],
+	[34.0, 700, 400, "tsuite"],
+	[34.8, 200, 500, "shimerasu"],
+	[35.6, 600, 200, "maegami to"],
+	[36.7, 200, 300, "kokoro no"],
+	[37.8, 800, 300, "rimen"],
+	[38.9, 300, 400, "wazurawashii wa"],
+	[40.5, 700, 200, "itsushika"],
+	[41.2, 200, 200, "kotonoha wa"],
+	[42.1, 600, 400, "tou ni"],
+	[42.6, 800, 500, "karekitte"],
+	[44.1, 300, 400, "koto no"],
+	[44.6, 800, 200, "mi ga"],
+	[44.8, 200, 200, "atashi ni"],
+	[45.5, 700, 500, "urete iru"],
+	[46.8, 400, 500, "kagami ni"],
+	[47.6, 800, 300, "utsuri"],
+	[48.1, 300, 400, "uso wo"],
+	[48.7, 100, 300, "egaite"],
+	[49.7, 400, 200, "mizukara wo"],
+	[50.5, 200, 400, "miushinatta"],
+	[51.7, 800, 200, "meiku"],
+	[54.4, 800, 500, "nazo"],
+	[55.2, 300, 400, "nazo"],
+	[55.8, 200, 180, "kazoete"],
+	[56.8, 800, 400, "asobimashou"],
+	[60.1, 300, 300, "naze"],
+	[60.8, 700, 200, "naze"],
+	[61.5, 200, 400, "koko de"],
+	[62.3, 700, 500, "odotte iru"],
+	[63.2, 180, 200, "deshou"],
+	[63.6, 800, 200, "kantan na"],
+	[64.7, 300, 400, "koto mo"],
+	[65.2, 700, 300, "wakaranai wa"],
+	[66.4, 400, 300, "atashi tte"],
+	[67.4, 200, 200, "nan dakke"],
+	[68.8, 700, 399, "sore"],
+	[69.1, 300, 500, "sura"],
+	[69.5, 500, 200, "yoru no"],
+	[70.1, 800, 300, "te ni"],
+	[70.7, 200, 200, "hodasarete"],
+	[71.8, 200, 400, "ai no"],
+	[72.5, 400, 300, "you ni"],
+	[74.9, 500, 400, "sayounara"],
+	[75.9, 800, 200, "mo ienu"],
+	[76.7, 300, 400, "mama naita"],
+	[77.7, 800, 400, "fonii"],
+	[78.4, 400, 500, "fonii"],
+	[79.2, 300, 200, "fonii"],
+	[79.9, 500, 200, "uso ni"],
+	[80.6, 200, 500, "karamatte iru"],
+	[81.9, 700, 300, "atashi wa"],
+	[83.3, 300, 200, "fonii"],
+	[85.6, 600, 500, "antipathy"],
+	[86.6, 300, 200, "world"],
+	[97.0, 700, 300, "sanzan na"],
+	[98.1, 300, 500, "hibi wa"],
+	[98.7, 600, 200, "kawaranai wa"],
+	[102.7, 200, 300, "zetsubou no"],
+	[103.8, 700, 300, "ame wa"],
+	[104.5, 500, 500, "yamanai wa"],
+	[108.5, 500, 300, "sayounara"],
+	[109.4, 800, 200, "mo ienu"],
+	[110.2 , 300, 400, "mama naita"],
+	[111.1, 800, 400, "fonii"],
+	[111.9, 400, 500, "fonii"],
+	[112.6, 300, 200, "fonii"],
+	[113.3, 500, 200, "uso ni"],
+	[114.1, 200, 500, "karamatte iru"],
+	[115.5, 700, 200, "tada"],
+	[117.0, 800, 200, "kantan na"],
+	[117.9, 300, 400, "koto mo"],
+	[118.4, 700, 300, "wakaranai wa"],
+	[119.7, 400, 300, "atashi tte"],
+	[120.6, 200, 200, "nan dakke"],
+	[122.2, 700, 399, "sore"],
+	[122.6, 300, 500, "sura"],
+	[122.9, 500, 200, "yoru no"],
+	[123.5, 800, 300, "te ni"],
+	[123.9, 200, 200, "hodasarete"],
+	[125.0, 200, 400, "ai no"],
+	[125.7, 400, 300, "you ni"],
+	[128.2, 500, 400, "sayounara"],
+	[129.2, 800, 200, "mata ne"],
+	[129.7, 300, 400, "to tsubuyaita"],
+	[131.0, 800, 400, "fonii"],
+	[131.7, 400, 500, "fonii"],
+	[132.4, 300, 200, "fonii"],
+	[133.2, 500, 200, "uso ni"],
+	[133.8, 200, 500, "karamatte iru"],
+	[135.2, 700, 300, "atashi wa"],
+	[136.7, 300, 200, "fonii"],
+	[138.8, 500, 500, "zouka"],
+	[139.4, 200, 200, "dake ga"],
+	[139.8, 700, 400, "shitte iru"],
+	[140.8, 800, 500, "himitsu no"],
+	[142.2, 500, 300, "fonii"]
+]
+
 var song_list = [
 	[0, "shoujo rei", shoujo_rei_map, 75, false],
 	[1, "just be friends", just_be_friends_map, 116, false],
@@ -717,7 +839,8 @@ var song_list = [
 	[4, "Snowman", snowman_map, 111, false],
 	[5, "Mozaik Role", mozaik_role_map, 65, false],
 	[6, "Ochame Kinou", ochame_kinou_map, 93, false],
-	[7, "Charles", charles_map, 71, false]
+	[7, "Charles", charles_map, 71, false],
+	[8, "Phony", phony_map, 118, false]
 ]
 
 func get_beatmap(index):
@@ -730,5 +853,6 @@ func get_beatmap(index):
 		5: return mozaik_role_map
 		6: return ochame_kinou_map
 		7: return charles_map
+		8: return phony_map
 	return[]
 	

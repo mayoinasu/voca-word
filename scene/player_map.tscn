@@ -184,7 +184,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_pxq76"]
 resource_name = "full combo"
-length = 5.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -264,7 +264,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_tv3pk"]
 resource_name = "song end"
-length = 5.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
