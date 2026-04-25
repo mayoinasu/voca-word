@@ -171,6 +171,12 @@ func check_song_end():
 			await $AnimationPlayer.animation_finished
 			await get_tree().create_timer(2).timeout
 			tree.change_scene_to_file("res://scene/song_selection.tscn")
+		if SongsData.song_selected == 9:
+			await get_tree().create_timer(2).timeout
+			$AnimationPlayer.play("fade out")
+			await $AnimationPlayer.animation_finished
+			await get_tree().create_timer(2).timeout
+			tree.change_scene_to_file("res://scene/song_selection.tscn")
 		await $AnimationPlayer.animation_finished
 		await AudioPlayer.finished
 		$AnimationPlayer.play("fade out")

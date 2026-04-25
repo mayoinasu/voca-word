@@ -1,6 +1,6 @@
 extends Node
 
-var song_selected = 8
+var song_selected = 9
 var played = 0
 var total = 5
 var song_buy = 0
@@ -9,7 +9,8 @@ var bought1 = false
 var bought2 = false
 var bought3 = false
 var bought4 = false
-var full_combo_total = 0
+var bought5 = false
+var full_combo_total = 8
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],
@@ -725,10 +726,10 @@ var phony_map = [
 	[12.1, 600, 500, "antipathy"],
 	[13.2, 300, 200, "world"],
 	[17.4, 200, 400, "La"],
-	[17.7, 400, 200, "Lu"],
-	[18.1, 400, 500, "La"],
-	[18.5, 600, 200, "Li"],
-	[18.7, 600, 500, "La"],
+	[17.7, 500, 200, "Lu"],
+	[18.1, 500, 400, "La"],
+	[18.5, 800, 200, "Li"],
+	[18.7, 800, 400, "La"],
 	[29.9, 400, 300, "zetsubou no"],
 	[31.2, 700, 500, "ame wa"],
 	[31.9, 300, 400, "atashi no"],
@@ -831,16 +832,137 @@ var phony_map = [
 	[142.2, 500, 300, "fonii"]
 ]
 
+var love_trial_map = [
+	[22.2, 600, 300, "Oh!"],
+	[22.8, 300, 500, "No!"],
+	[23.2, 500, 200, "No!"],
+	[23.5, 700, 400, "No!"],
+	[23.8, 800, 200, "chotto"],
+	[24.4, 500, 300, "ma ga"],
+	[24.9, 300, 500, "sashi"],
+	[25.3, 800, 500, "tanda"],
+	[25.8, 700, 300, "sou,"],
+	[26.5, 400, 400, "boku wa"],
+	[27.4, 800, 200, "kimi"],
+	[27.8, 200, 400, "dake"],
+	[28.2, 600, 400, "ga su"],
+	[28.7, 300, 200, "bete"],
+	[29.1, 700, 500, "sa nee,"],
+	[30.3, 500, 200, "joujou"],
+	[31.0, 800, 200, "shaku"],
+	[31.4, 400, 300, "ryou"],
+	[31.6, 500, 500, "wo kuda"],
+	[32.4, 300, 300, "sai"],
+	[33.2, 200, 200, "boku"],
+	[33.6, 400, 400, "hitori"],
+	[34.3, 500, 180, "ja ikite"],
+	[35.2, 170, 200, "kenai"],
+	[36.6, 300, 500, "Oh!"],
+	[37.5, 800, 200, "Jesus!"],
+	[38.1, 400, 300, "sonna"],
+	[38.8, 700, 500, "me de"],
+	[39.2, 600, 200, "minai"],
+	[39.9, 200, 200, "de mou,"],
+	[40.8, 500, 400, "kon"],
+	[41.1, 200, 500, "rinzai"],
+	[41.7, 300, 200, "koko"],
+	[42.2, 800, 300, "ro ire"],
+	[42.8, 600, 500, "kaeru"],
+	[43.5, 200, 500, "yo nee,"],
+	[44.4, 800, 200, "dakara"],
+	[45.3, 600, 300, "shikkou"],
+	[46.1, 400, 500, "yuuyo de"],
+	[47.5, 800, 300, "ichido"],
+	[48.2, 300, 400, "dake"],
+	[48.7, 700, 200, "mino"],
+	[49.1, 300, 500, "gashite"],
+	[50.7, 600, 400, "keika"],
+	[51.6, 400, 200, "kuteki"],
+	[52.4, 800, 500, "na hankou"],
+	[54.3, 300, 180, "kono"],
+	[54.9, 600, 400, "aribai"],
+	[56.1, 200, 200, "kousa"],
+	[56.7, 700, 300, "ku mo"],
+	[57.9, 800, 200, "kimi"],
+	[58.4, 300, 400, "dake wa"],
+	[59.6, 400, 200, "damasenai"],
+	[61.3, 700, 400, "kotesaki no"],
+	[62.4, 400, 500, "tejina ja"],
+	[63.5, 300, 500, "No!"],
+	[63.8, 500, 200, "No!"],
+	[64.1, 700, 400, "No!"],
+	[64.4, 200, 200, "masani"],
+	[65.2, 400, 300, "ren'ai"],
+	[65.9, 800, 300, "saiban"],
+	[66.8, 500, 500, "kimi wa"],
+	[67.7, 300, 400, "boku ni"],
+	[68.6, 700, 200, "dore"],
+	[69.1, 700, 500, "kurai no"],
+	[70.4, 300, 200, "tsumi wo"],
+	[71.3, 200, 400, "tou?"],
+	[72.4, 600, 300, "saishuu"],
+	[73.1, 800, 400, "benron"],
+	[74.0, 600, 500, "namida"],
+	[74.9, 300, 200, "no ato ni"],
+	[75.8, 700, 400, "kimi kara"],
+	[77.1, 400, 300, "tsugerareta"],
+	[78.5, 800, 200, "boku wa"],
+	[79.1, 300, 400, "[Guilty]"],
+	[89.0, 700, 300, "doko ga"],
+	[89.6, 400, 500, "kanzen"],
+	[90.3, 500, 200, "hanzai?"],
+	[91.2, 800, 400, "kimi mo"],
+	[92.2, 600, 300, "boku mo"],
+	[93.1, 800, 200, "onaji"],
+	[93.9, 400, 500, "dake no"],
+	[94.8, 300, 200, "kanashimi wo"],
+	[96.6, 700, 300, "aishita hito"],
+	[98.4, 500, 500, "aisareta hito"],
+	[100.2, 700, 200, "tagai wo"],
+	[101.5, 200, 300, "sabakiau"],
+	[102.9, 400, 400, "sadame"],
+	[103.8, 800, 200, "dakara"],
+	[105.8, 500, 200, "yuuzai"],
+	[106.6, 700, 400, "hanketsu"],
+	[107.4, 800, 200, "kimi wa"],
+	[108.2, 600, 300, "boku ni"],
+	[109.1, 500, 400, "dore kurai"],
+	[110.6, 200, 200, "no tsumi"],
+	[111.5, 400, 400, "wo tou?"],
+	[112.9, 200, 500, "shuushinkei de"],
+	[114.4, 800, 300, "tsugunau"],
+	[115.6, 400, 500, "kakugo"],
+	[116.3, 700, 400, "shinu made "],
+	[117.7, 200, 500, "kimi dake wo"],
+	[119.0, 600, 300, "mamoru yo"],
+	[120.2, 800, 300, "ren'ai"],
+	[120.7, 500, 400, "saiban"],
+	[121.6, 700, 300, "kimi ga"],
+	[122.6, 300, 500, "boku ni"],
+	[123.5, 400, 400, "oshiete"],
+	[124.5, 600, 200, "kureta"],
+	[125.4, 700, 500, "shinjitsu"],
+	[127.1, 200, 500, "itsuwari no"],
+	[128.9, 700, 200, "namida no"],
+	[130.0, 300, 400, "ato de"],
+	[130.6, 800, 500, "hisoka ni"],
+	[132.0, 400, 200, "hohoenda"],
+	[133.4, 600, 400, "koakuma sou,"],
+	[135.1, 700, 200, "kimi mo"],
+	[135.8, 500, 300, "[Guilty]"]
+]
+
 var song_list = [
-	[0, "shoujo rei", shoujo_rei_map, 75, false],
-	[1, "just be friends", just_be_friends_map, 116, false],
-	[2, "The Snow White \n Princess is", tswpi_map, 69, false],
-	[3, "Bring it On", bring_it_on_map, 75, false],
-	[4, "Snowman", snowman_map, 111, false],
-	[5, "Mozaik Role", mozaik_role_map, 65, false],
-	[6, "Ochame Kinou", ochame_kinou_map, 93, false],
-	[7, "Charles", charles_map, 71, false],
-	[8, "Phony", phony_map, 118, false]
+	[0, "shoujo rei", shoujo_rei_map, 75, false, "easy", "Miku", ""],
+	[1, "just be friends", just_be_friends_map, 116, false, "medium", "Luka", ""],
+	[2, "The Snow White \n Princess is", tswpi_map, 69, false, "easy", "Meiko", ""],
+	[3, "Bring it On", bring_it_on_map, 75, false, "medium", "Rin", "Len"],
+	[4, "Snowman", snowman_map, 111, false, "easy", "Kaito", ""],
+	[5, "Mozaik Role", mozaik_role_map, 65, false, "easy", "other", ""],
+	[6, "Ochame Kinou", ochame_kinou_map, 93, false, "medium", "other", ""],
+	[7, "Charles", charles_map, 71, false, "medium", "other", ""],
+	[8, "Phony", phony_map, 118, false, "medium", "other", ""],
+	[9, "Love Trial", love_trial_map, 117, false, "medium", "Miku", ""]
 ]
 
 func get_beatmap(index):
@@ -854,5 +976,6 @@ func get_beatmap(index):
 		6: return ochame_kinou_map
 		7: return charles_map
 		8: return phony_map
+		9: return love_trial_map
 	return[]
 	

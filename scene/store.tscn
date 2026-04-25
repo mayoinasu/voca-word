@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dotpc7vw6oo8v"]
+[gd_scene load_steps=33 format=3 uid="uid://dotpc7vw6oo8v"]
 
 [ext_resource type="Script" uid="uid://brs2q3opec5ae" path="res://store.gd" id="1_j6dk4"]
 [ext_resource type="Texture2D" uid="uid://duwfrteegk8cg" path="res://image/background/store.png" id="2_qx50h"]
@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://45fluide5kp6" path="res://audio-asset/charles-preview.MP3" id="23_6vpft"]
 [ext_resource type="Texture2D" uid="uid://b8a1ndwlnkdcr" path="res://image/cover/phony-cover.png" id="25_dfgsk"]
 [ext_resource type="AudioStream" uid="uid://ccyhuxrg6w4gy" path="res://audio-asset/phony-preview.MP3" id="26_f1wja"]
+[ext_resource type="Texture2D" uid="uid://lfj1rh67nmc" path="res://image/cover/love-trial-cover.png" id="27_mve3p"]
+[ext_resource type="AudioStream" uid="uid://cljqct7i40csl" path="res://audio-asset/love-trial-preview.MP3" id="28_dc8mw"]
 
 [sub_resource type="Animation" id="Animation_qx50h"]
 length = 0.001
@@ -92,12 +94,12 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_qx50h")
 
 [node name="Label" type="Label" parent="background"]
-offset_left = 496.0
-offset_top = 56.0
-offset_right = 655.0
-offset_bottom = 104.0
+offset_left = 488.0
+offset_top = 40.0
+offset_right = 670.0
+offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("3_p4htp")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 40
 text = "STORE"
 
 [node name="right" type="TextureButton" parent="background"]
@@ -185,13 +187,23 @@ theme_override_font_sizes/font_size = 20
 text = "Not enough Full Combo"
 
 [node name="Label3" type="Label" parent="background"]
-offset_left = 480.0
-offset_top = 136.0
-offset_right = 675.0
-offset_bottom = 160.0
+offset_left = 456.0
+offset_top = 112.0
+offset_right = 699.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 25
+text = "Price = 2 full combo"
+
+[node name="Label5" type="Label" parent="background"]
+offset_left = 440.0
+offset_top = 144.0
+offset_right = 712.0
+offset_bottom = 168.0
 theme_override_fonts/font = ExtResource("17_uxej0")
 theme_override_font_sizes/font_size = 20
-text = "Price = 2 full combo"
+text = "Difficulty ="
+horizontal_alignment = 1
 
 [node name="mozaik-role" type="Node2D" parent="."]
 visible = false
@@ -358,6 +370,35 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="phony"]
 stream = ExtResource("26_f1wja")
+
+[node name="love-trial" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="love-trial"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_mve3p")
+
+[node name="Label" type="Label" parent="love-trial"]
+offset_left = 504.0
+offset_top = 488.0
+offset_right = 646.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 30
+text = "Love Trial"
+
+[node name="Label2" type="Label" parent="love-trial"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("17_uxej0")
+theme_override_font_sizes/font_size = 20
+text = "40mP ft. Hatsune Miku"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="love-trial"]
+stream = ExtResource("28_dc8mw")
 
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]

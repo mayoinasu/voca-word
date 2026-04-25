@@ -10,11 +10,13 @@ func _ready() -> void:
 	
 
 func _song(number):
+	var listnumber = 5 + number
 	$background/TextureButton/Label.text = "BUY"
 	$background/TextureButton.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	if number == 0:
 		$"mozaik-role".visible = true
 		$"mozaik-role/AudioStreamPlayer2D".play()
+		
 		
 	if number == 1:
 		$"ochame-kinou".visible = true
@@ -27,8 +29,12 @@ func _song(number):
 	if number == 3:
 		$phony.visible = true
 		$phony/AudioStreamPlayer2D.play()
-		
-
+	
+	if number == 4:
+		$"love-trial".visible = true
+		$"love-trial/AudioStreamPlayer2D".play()
+	
+	$background/Label5.text = "Difficulty = %s" %SongsData.song_list[listnumber][5]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$background/Label4.text = "User's full combo: %d" %SongsData.full_combo_total 
@@ -51,6 +57,11 @@ func _process(delta: float) -> void:
 		if SongsData.bought4 == true:
 			$background/TextureButton.modulate = Color(0.729, 0.729, 0.729, 1.0)
 			$background/TextureButton/Label.text = "SOLD"
+			
+	if number == 4:
+		if SongsData.bought5 == true:
+			$background/TextureButton.modulate = Color(0.729, 0.729, 0.729, 1.0)
+			$background/TextureButton/Label.text = "SOLD"
 	
 		
 func _close_all():
@@ -63,9 +74,11 @@ func _close_all():
 	$charles/AudioStreamPlayer2D.stop()
 	$phony.visible = false
 	$phony/AudioStreamPlayer2D.stop()
+	$"love-trial".visible = false
+	$"love-trial/AudioStreamPlayer2D".stop()
 
 func _on_right_pressed() -> void:
-	if number == 3:
+	if number == 4:
 		number = 0
 	else:
 		number +=1
@@ -75,7 +88,7 @@ func _on_right_pressed() -> void:
 
 func _on_left_pressed() -> void:
 	if number == 0:
-		number = 3
+		number = 4
 	else: 
 		number -=1
 	_close_all()
@@ -89,7 +102,7 @@ func _on_texture_button_pressed() -> void:
 			SongsData.bought1 = true
 			SongsData.song_buy += 1
 			SongsData.song_buy_array.append("Mozaik Role")
-		elif SongsData.full_combo_total < 2:
+		elif SongsData.full_combo_total < 2 && SongsData.bought1 == false:
 			$background/Label2.visible = true
 	
 	if number == 1:
@@ -98,7 +111,7 @@ func _on_texture_button_pressed() -> void:
 			SongsData.bought2 = true
 			SongsData.song_buy += 1
 			SongsData.song_buy_array.append("Ochame Kinou")
-		elif number == 1 && SongsData.full_combo_total < 2:
+		elif number == 1 && SongsData.full_combo_total < 2 && SongsData.bought2 == false:
 			$background/Label2.visible = true
 	
 	if number == 2:
@@ -107,7 +120,7 @@ func _on_texture_button_pressed() -> void:
 			SongsData.bought3 = true
 			SongsData.song_buy += 1
 			SongsData.song_buy_array.append("Charles")
-		elif number == 2 && SongsData.full_combo_total < 2:
+		elif number == 2 && SongsData.full_combo_total < 2 && SongsData.bought3 == false:
 			$background/Label2.visible = true
 			
 	if number == 3:
@@ -116,7 +129,16 @@ func _on_texture_button_pressed() -> void:
 			SongsData.bought4 = true
 			SongsData.song_buy += 1
 			SongsData.song_buy_array.append("Phony")
-		elif number == 3 && SongsData.full_combo_total < 2:
+		elif number == 3 && SongsData.full_combo_total < 2 && SongsData.bought4 == false:
+			$background/Label2.visible = true
+	
+	if number == 4:
+		if SongsData.bought5 == false && SongsData.full_combo_total >= 2:
+			SongsData.full_combo_total -=2
+			SongsData.bought5 = true
+			SongsData.song_buy += 1
+			SongsData.song_buy_array.append("Love Trial")
+		elif number == 4 && SongsData.full_combo_total < 2 && SongsData.bought5 == false:
 			$background/Label2.visible = true
 
 

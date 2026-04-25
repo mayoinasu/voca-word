@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://6nifct1v7ura"]
+[gd_scene load_steps=39 format=3 uid="uid://6nifct1v7ura"]
 
 [ext_resource type="Script" uid="uid://beppwd88rvj02" path="res://script/song_selection.gd" id="1_0ve7w"]
 [ext_resource type="Texture2D" uid="uid://cwffs31y7wm3b" path="res://image/background/song selection.png" id="1_vx71o"]
@@ -32,6 +32,8 @@
 [ext_resource type="AudioStream" uid="uid://45fluide5kp6" path="res://audio-asset/charles-preview.MP3" id="30_bbtm7"]
 [ext_resource type="Texture2D" uid="uid://b8a1ndwlnkdcr" path="res://image/cover/phony-cover.png" id="31_icyas"]
 [ext_resource type="AudioStream" uid="uid://ccyhuxrg6w4gy" path="res://audio-asset/phony-preview.MP3" id="32_doi27"]
+[ext_resource type="Texture2D" uid="uid://lfj1rh67nmc" path="res://image/cover/love-trial-cover.png" id="33_rkkle"]
+[ext_resource type="AudioStream" uid="uid://cljqct7i40csl" path="res://audio-asset/love-trial-preview.MP3" id="34_8s588"]
 
 [sub_resource type="Animation" id="Animation_11h86"]
 length = 0.001
@@ -209,6 +211,78 @@ offset_right = 216.0
 offset_bottom = 519.0
 theme_override_fonts/font = ExtResource("8_5ijhi")
 text = "Full combo count: "
+
+[node name="Option" type="OptionButton" parent="background"]
+offset_left = 888.0
+offset_top = 176.0
+offset_right = 1096.0
+offset_bottom = 207.0
+selected = 0
+item_count = 3
+popup/item_0/text = "All"
+popup/item_0/id = 0
+popup/item_1/text = "By Difficulty"
+popup/item_1/id = 1
+popup/item_2/text = "By Virtual Singer"
+popup/item_2/id = 2
+
+[node name="Label6" type="Label" parent="background"]
+offset_left = 864.0
+offset_top = 144.0
+offset_right = 1096.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Song filter"
+horizontal_alignment = 1
+
+[node name="by-difficulty" type="OptionButton" parent="background"]
+offset_left = 896.0
+offset_top = 256.0
+offset_right = 1088.0
+offset_bottom = 280.0
+selected = 0
+item_count = 3
+popup/item_0/text = "All"
+popup/item_0/id = 0
+popup/item_1/text = "Easy"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+
+[node name="by-singer" type="OptionButton" parent="background"]
+offset_left = 896.0
+offset_top = 256.0
+offset_right = 1088.0
+offset_bottom = 287.0
+selected = 0
+item_count = 8
+popup/item_0/text = "All"
+popup/item_0/id = 0
+popup/item_1/text = "Hatsune Miku"
+popup/item_1/id = 1
+popup/item_2/text = "Megurine Luka"
+popup/item_2/id = 2
+popup/item_3/text = "MEIKO"
+popup/item_3/id = 3
+popup/item_4/text = "KAITO"
+popup/item_4/id = 4
+popup/item_5/text = "Kagamine Rin"
+popup/item_5/id = 5
+popup/item_6/text = "Kagamine Len"
+popup/item_6/id = 6
+popup/item_7/text = "others"
+popup/item_7/id = 7
+
+[node name="Label7" type="Label" parent="background"]
+offset_left = 896.0
+offset_top = 224.0
+offset_right = 1080.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "Difficulty"
+horizontal_alignment = 1
 
 [node name="shoujo-rei" type="Node2D" parent="."]
 visible = false
@@ -475,7 +549,39 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="phony"]
 stream = ExtResource("32_doi27")
 
+[node name="love-trial" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="love-trial"]
+position = Vector2(576, 320)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("33_rkkle")
+
+[node name="Label" type="Label" parent="love-trial"]
+offset_left = 504.0
+offset_top = 488.0
+offset_right = 646.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 30
+text = "Love Trial"
+
+[node name="Label2" type="Label" parent="love-trial"]
+offset_left = 368.0
+offset_top = 528.0
+offset_right = 782.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("8_5ijhi")
+theme_override_font_sizes/font_size = 20
+text = "40mP ft. Hatsune Miku"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="love-trial"]
+stream = ExtResource("34_8s588")
+
 [connection signal="pressed" from="background/right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="background/left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="background/select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="background/store" to="." method="_on_store_pressed"]
+[connection signal="item_selected" from="background/Option" to="." method="_on_option_item_selected"]
+[connection signal="item_selected" from="background/by-difficulty" to="." method="_on_bydifficulty_item_selected"]
+[connection signal="item_selected" from="background/by-singer" to="." method="_on_bysinger_item_selected"]
