@@ -8,6 +8,9 @@ var singer
 var song_filtered = []
 var count = 0
 var filtered
+var total_gift = 0
+@onready var gift_meter = $background/TextureProgressBar
+
 
 func _ready() -> void:
 	filter = "false"
@@ -28,7 +31,22 @@ func _ready() -> void:
 	_song(0)
 	
 	$background/Label4.text = "Songs Played: %d / %d" % [SongsData.played, 5 + SongsData.song_buy]
-	$background/Label2.text = "Full combo count: %d" % SongsData.full_combo_total
+	gift_meter.value = SongsData.total_score
+	
+	
+	
+		
+func _gift_checking():
+	while total_gift > 0:
+		total_gift -= 1
+		$"gift-allert".visible = true
+		$"gift-allert/AudioStreamPlayer2D".play()
+		SongsData.full_combo_total += 1
+		await get_tree().create_timer(1).timeout
+		$"gift-allert".visible = false
+		await get_tree().create_timer(1).timeout
+		
+		
 	
 func _filter(item):
 	song_filtered.clear()
@@ -149,7 +167,16 @@ func _close_all():
 	$"love-trial/AudioStreamPlayer2D".stop()
 
 func _process(delta: float) -> void:
-	pass
+	$background/Label2.text = "Full combo count: %d" % SongsData.full_combo_total
+	gift_meter.value = SongsData.total_score
+	if total_gift > 0:
+		$background/Label8.visible = true
+	else: 
+		$background/Label8.visible = false
+	if SongsData.total_score >= 60000:
+		SongsData.total_score -= 60000
+		total_gift += 1
+		gift_meter.value = SongsData.total_score
 
 func _on_right_pressed() -> void:
 	_close_all()
@@ -284,3 +311,8 @@ func _on_bysinger_item_selected(index: int) -> void:
 		5: _filter("Rin")
 		6: _filter("Len")
 		7: _filter("other")
+
+
+func _on_gift_pressed() -> void:
+	print (total_gift)
+	_gift_checking()

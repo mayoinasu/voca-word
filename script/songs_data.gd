@@ -10,7 +10,8 @@ var bought2 = false
 var bought3 = false
 var bought4 = false
 var bought5 = false
-var full_combo_total = 8
+var full_combo_total = 0
+var total_score = 0
 
 var shoujo_rei_map = [
 	[14.5, 200, 350, "honnou ga"],

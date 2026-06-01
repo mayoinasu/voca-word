@@ -142,6 +142,7 @@ func _process(delta: float) -> void:
 func check_song_end():
 	
 	if next_index >= beatmap.size():
+		SongsData.total_score += score
 		var tree = get_tree()
 		await get_tree().create_timer(4).timeout
 		if combo == SongsData.song_list[SongsData.song_selected][3]:
@@ -159,6 +160,12 @@ func check_song_end():
 		$AnimationPlayer/Label9.text = "%d x" %highest
 		await get_tree().create_timer(1).timeout
 		$AnimationPlayer.play("score")
+		if SongsData.song_selected == 2:
+			await get_tree().create_timer(2).timeout
+			$AnimationPlayer.play("fade out")
+			await $AnimationPlayer.animation_finished
+			await get_tree().create_timer(2).timeout
+			tree.change_scene_to_file("res://scene/song_selection.tscn")
 		if SongsData.song_selected == 6:
 			await get_tree().create_timer(2).timeout
 			$AnimationPlayer.play("fade out")
